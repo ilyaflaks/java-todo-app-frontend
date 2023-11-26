@@ -1,0 +1,8 @@
+export default function LogoutComponent() {
+  return (
+    <div className="errorComponent">
+      <h1>You are logged out</h1>
+      <div>Come back soon</div>
+    </div>
+  );
+}
