@@ -11,33 +11,6 @@ export default function AuthProvider({ children }) {
   const [username, setUsername] = useState(null);
   const [token, setToken] = useState(null);
 
-  // async function login(username, password) {
-  //   const baToken = "Basic " + window.btoa(username + ":" + password); //base64 encoding
-
-  //   try {
-  //     const response = await executeAuthService(baToken);
-
-  //     if (response.status == 200) {
-  //       setIsAuthed(true);
-  //       setUsername(username);
-  //       setToken(baToken);
-
-  //       apiClient.interceptors.request.use((config) => {
-  //         console.log("intercepting and adding token");
-  //         config.headers.Authorization = baToken;
-  //         return config;
-  //       });
-  //       return true;
-  //     } else {
-  //       logout();
-  //       return false;
-  //     }
-  //   } catch (error) {
-  //     logout();
-  //     return false;
-  //   }
-  // }
-
   async function login(username, password) {
     try {
       const response = await executeJwtAuthService(username, password);

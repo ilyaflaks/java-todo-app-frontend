@@ -1,76 +1,36 @@
-# Getting Started with Create React App
+# This is the front end for the java-todo-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[java-todo-app can be found here](https://github.com/ilyaflaks/java-todo-app)
+This is the React front end part of the full stack app. To run the app
 
-## Available Scripts
+1. clone this repo to your machine
+2. clone java-todo-app to your machine
+3. install Eclipse and Docker Desktop if you don't have it yet
+4. In Eclipe, go to the top of the screen where it says File -> Import -> Existing Maven Projects -> Browse to where you cloned the repo to -> Click Finish
+5. From the command line run the following command:
 
-In the project directory, you can run:
+**docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=todos-user --env MYSQL_PASSWORD=dummytodos --env MYSQL_DATABASE=todos --name mysql --publish 3306:3306 mysql:8-oracle**
 
-### `npm start`
+If you get an error, you probably have some other process on port 3306. Kill it and try again.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. In Eclipse, open **RestfulWebServicesApplication.java** file of the java-todo-app, right click on the code, select Run As -> 1 Java Application
+   It should sayd "Application runing on port 8080" on the Eclipse console
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+7. In the command line, **cd** to the folder where you cloned this repo. Make sure the folder you are in is the one with the **package.json** file. Run the command **"npm install"**. Wait for the node modules to finish installing. Then run the command **"npm start"**
 
-### `npm test`
+8. Go to [http://localhost:3000](http://localhost:3000) and start playing around with the Todo app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+9. The username and password are hardcoded for now, use the combination "in28minutes" and "dummy" respectively
 
-### `npm run build`
+# Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- The backend is created with Spring Boot 3.2.0, Java 17 and Maven
+- The backend is using a MySQL database that is running on a Docker Container
+- Front end: JWT Authentication configured with Spring Security
+- Front end: JWT Authentication added to every HTTP request with Axios interceptors
+- Single Page React application
+- Bootstrap visual styles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Sources
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-insert into todo (id, description, done, target_date, username) values(10001, 'Learn AWS', false, CURRENT_DATE(), 'in28minutes')
-
-insert into todo (id, description, done, target_date, username) values(10002, 'Get AWS Certified', false, CURRENT_DATE(), 'in28minutes')
-
-insert into todo (id, description, done, target_date, username) values(10003, 'Learn DevOps', false, CURRENT_DATE(), 'in28minutes')
+This project is a part of [Master Spring Boot 3 & Spring Framework 6 with Java](https://www.udemy.com/course/spring-boot-and-spring-framework-tutorial-for-beginners) from **in28minutes**. All the credit goes to the in28minutes team.

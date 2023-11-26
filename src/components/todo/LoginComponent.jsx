@@ -28,7 +28,7 @@ export default function LoginComponent() {
 
   return (
     <div className="Login">
-      <h1>Gotta Login, Mo...</h1>
+      <h1>Please Login</h1>
       {/* {showSuccessMessage && (
         <div className="successMessage">Authenticated Successfully</div>
       )} */}
