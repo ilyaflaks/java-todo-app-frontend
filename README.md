@@ -1,6 +1,6 @@
 # This is the front end for the java-todo-app
 
-[java-todo-app can be found here](https://github.com/ilyaflaks/java-todo-app)
+[java-todo-app backend can be found here](https://github.com/ilyaflaks/java-todo-app)
 This is the React front end part of the full stack app. To run the app
 
 1. clone this repo to your machine
@@ -14,7 +14,7 @@ This is the React front end part of the full stack app. To run the app
 If you get an error, you probably have some other process on port 3306. Kill it and try again.
 
 6. In Eclipse, open **RestfulWebServicesApplication.java** file of the java-todo-app, right click on the code, select Run As -> 1 Java Application
-   It should sayd "Application runing on port 8080" on the Eclipse console
+   It should sayd "Application runing on port 5000" on the Eclipse console
 
 7. In the command line, **cd** to the folder where you cloned this repo. Make sure the folder you are in is the one with the **package.json** file. Run the command **"npm install"**. Wait for the node modules to finish installing. Then run the command **"npm start"**
 
@@ -30,6 +30,10 @@ If you get an error, you probably have some other process on port 3306. Kill it 
 - Front end: JWT Authentication added to every HTTP request with Axios interceptors
 - Single Page React application
 - Bootstrap visual styles
+
+# DevOps
+
+This project is temporarily deployed to AWS with the [front end on S3](http://todoapp-ilyaflaks.s3-website-us-west-1.amazonaws.com), the backend on EC2 and the database on RDS. If you click on the link and it's not working or if the backend is not responing, that means AWS started charging me more money than I'm willing to spend and I have deleted the app.
 
 # Sources
 
